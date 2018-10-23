@@ -1,0 +1,22 @@
+apply plugin: 'application'
+apply plugin: 'jacoco'
+
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    jcenter()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    compile "junit:junit:4.12"
+
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/reports/jacoco/test/myHTMLreport")
+    }
+}
